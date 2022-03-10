@@ -32,8 +32,8 @@ fi
 sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
 # Downloading resources
 sudo mkdir /mediabots /floppy /virtio
-link1_status=$(curl -Is http://download.microsoft.com/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO | grep HTTP | cut -f2 -d" " | head -1)
-link2_status=$(curl -Is https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO | grep HTTP | cut -f2 -d" ")
+link1_status=$(curl -Is https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_es-es_1.iso  | grep HTTP | cut -f2 -d" " | head -1)
+link2_status=$(curl -Is https://www41.uptobox.com/dl/3f3NiL44G39ORvYI7HWQzT-2mFhC6Yf1RdsZ1_m4XNvv4a0mHblJzty4ww7crhi_KdZwqBRY4OSQgkivBH6NKWOXpmjysDL4Y4r0FHht8sqcjd6PPgYQVsFdWRNJjGFsr_X5csJkfVbtMCHtwGTgBA/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_es-es_1.iso | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://archive.org/download/WS2012R2/WS2012R2.ISO # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
 	sudo wget -O /mediabots/WS2012R2.ISO https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_es-es_1.iso 
