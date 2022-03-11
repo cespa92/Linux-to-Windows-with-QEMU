@@ -36,9 +36,9 @@ link1_status=$(curl -Is http://download.microsoft.com/download/6/2/A/62A76ABB-99
 link2_status=$(curl -Is https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://archive.org/download/WS2012R2/WS2012R2.ISO # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -O /mediabots/WS2012R2.ISO http://download.microsoft.com/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO 
+	sudo wget -O /mediabots/WS2012R2.ISO http://download.microsoft.com/download/7/6/9/769D6905-3BC7-4CF0-B3BD-785EC88767AF/14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_ES-ES.ISO 
 elif [ $link2_status = "200" -o $link2_status = "301" -o $link2_status = "302" ] ; then 
-	sudo wget -P /mediabots https://www102.uptobox.com/dl/51rKF0FfzWSlbRKgMZu8tiFtKRoxKd5dBr9zVGhvLX1CUycz2gYFw7EdfJPKzdsTSbNKX6VwYaOtZ7ZpYHGVIt3ITbn1-ZN2S5GYRajvU0r82DuizejDLn4XSii4LCIm65R3HMZ8ZfEe7XTfmcr35simzRcFv3x4yuR4St3zPqk/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_ES-ES-IR3_SSS_X64FREE_ES-ES_DV9.ISO
+	sudo wget -P /mediabots https://www54.uptobox.com/dl/pJ_FySrZptqNzYqgVH4OArRUsM_8__zn_vpVC2nCgz4769C7rzCDnWFofQVCf4JZBKU91Y__W88TRSXCFmfKes7zVVIfIr99R5tXwH8UB07bOPwcC_rJWCNHd0-L3-r_q2-eDZjPy1cCEs0tfG5mJA/14393.0.161119-1705.RS1_REFRESH_SERVER_EVAL_X64FRE_ES-ES.ISO
 else
 	echo -e "${RED}[Error]${NC} ${YELLOW}Sorry! None of Windows OS image urls are available , please report about this issue on Github page : ${NC}https://github.com/mediabots/Linux-to-Windows-with-QEMU"
 	echo "Exiting.."
