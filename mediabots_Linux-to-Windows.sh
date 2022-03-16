@@ -36,7 +36,7 @@ link1_status=$(curl -Is http://download.microsoft.com/download/6/2/A/62A76ABB-99
 link2_status=$(curl -Is https://ia601506.us.archive.org/4/items/WS2012R2/WS2012R2.ISO | grep HTTP | cut -f2 -d" ")
 #sudo wget -P /mediabots https://archive.org/download/WS2012R2/WS2012R2.ISO # Windows Server 2012 R2 
 if [ $link1_status = "200" ] ; then 
-	sudo wget -O /mediabots/WS2012R2.ISO https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_es-es_1.iso 
+	sudo wget -O /mediabots/WS2019.iso https://software-download.microsoft.com/download/pr/17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_es-es_1.iso 
 elif [ $link2_status = "200" -o $link2_status = "301" -o $link2_status = "302" ] ; then 
 	sudo wget -P /mediabots https://www41.uptobox.com/dl/nDKuvK1WcYGU_Rk7AVp-3Z1LVqBwXN3Cb267clWIsqkKyIqS72G2Ko0HnOve7cbkwFW6Vp7koifE-6dNHogceKvRssWETCSDZvdyEF423swD5C85vh2Or5xSipTIydnAUrQwVIkJpyhjePW21xgBOnZtH1GxrE_ehGJNWpQsV2E/Windows%20Server%202019.iso
 else
